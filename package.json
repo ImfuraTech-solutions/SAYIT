@@ -1,0 +1,13 @@
+{
+  "name": "SAYIT",
+  "version": "1.0.0",
+  "scripts": {
+    "install:Backend": "cd Backend && npm install",
+    "start:Backend": "cd Backend && npm start",
+    "install:Frontend": "cd Frontend && npm install",
+    "build:Frontend": "cd Frontend && npm run build",
+    "install:all": "npm run install:Backend && npm run install:Frontend",
+    "build:all": "npm run build:Frontend",
+    "start:all": "npm run build:Frontend && npm run start:Backend"
+  }
+}
