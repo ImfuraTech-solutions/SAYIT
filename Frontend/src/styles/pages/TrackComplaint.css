@@ -1,0 +1,371 @@
+.track-complaint-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.track-complaint-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.track-complaint-header h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.track-complaint-header .subtitle {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.track-complaint-form {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.search-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tracking-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.tracking-input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.track-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.track-button:hover {
+  background-color: #2980b9;
+}
+
+.track-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #e74c3c;
+  background-color: #fadbd8;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.complaint-details {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 1.5rem;
+  border-left: 4px solid #3498db;
+}
+
+.complaint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.complaint-title h2 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.tracking-id-container {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.tracking-id {
+  font-weight: bold;
+  color: #3498db;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge.pending {
+  background-color: #fef9e7;
+  color: #f39c12;
+}
+
+.status-badge.under-review {
+  background-color: #e8f8f5;
+  color: #16a085;
+}
+
+.status-badge.assigned {
+  background-color: #ebf5fb;
+  color: #3498db;
+}
+
+.status-badge.in-progress {
+  background-color: #eafaf1;
+  color: #27ae60;
+}
+
+.status-badge.resolved {
+  background-color: #eafaf1;
+  color: #27ae60;
+}
+
+.status-badge.closed {
+  background-color: #f2f3f4;
+  color: #7f8c8d;
+}
+
+.status-badge.rejected {
+  background-color: #fdedec;
+  color: #e74c3c;
+}
+
+.complaint-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.complaint-description,
+.complaint-location,
+.complaint-responses,
+.complaint-attachments {
+  margin-bottom: 1.5rem;
+}
+
+.complaint-description h3,
+.complaint-location h3,
+.complaint-responses h3,
+.complaint-attachments h3 {
+  color: #34495e;
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.response-item {
+  background-color: white;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-left: 3px solid #3498db;
+}
+
+.response-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.response-from {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.response-date {
+  color: #95a5a6;
+  font-size: 0.85rem;
+}
+
+.response-content {
+  margin: 0;
+  color: #34495e;
+}
+
+.attachments-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.attachment-link {
+  display: inline-block;
+  background-color: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  color: #3498db;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.attachment-link:hover {
+  background-color: #edf2f7;
+  border-color: #3498db;
+}
+
+.track-complaint-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.info-card p {
+  color: #5d6d7e;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.status-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.status-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  color: #5d6d7e;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.status-dot.pending { background-color: #f39c12; }
+.status-dot.under-review { background-color: #16a085; }
+.status-dot.assigned { background-color: #3498db; }
+.status-dot.in-progress { background-color: #27ae60; }
+.status-dot.resolved { background-color: #27ae60; }
+.status-dot.closed { background-color: #7f8c8d; }
+.status-dot.rejected { background-color: #e74c3c; }
+
+/* Call to Action Section */
+.track-complaint-cta {
+  background: linear-gradient(135deg, #1a3b5d, #2c5282);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  margin-top: 3rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.track-complaint-cta h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.track-complaint-cta p {
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #1a3b5d;
+  padding: 0.875rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button svg {
+  margin-right: 0.75rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .track-complaint-header h1 {
+    font-size: 2rem;
+  }
+  
+  .search-container {
+    flex-direction: column;
+  }
+  
+  .complaint-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .status-container {
+    margin-top: 0.5rem;
+  }
+  
+  .complaint-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

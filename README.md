@@ -1,2 +1,0 @@
-# SAYIT
-SAYIT Platform

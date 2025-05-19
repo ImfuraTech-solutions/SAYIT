@@ -1,0 +1,142 @@
+/* Agent Login Page Styles */
+
+.agent-login-container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.agent-login-form-container {
+  max-width: 28rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.agent-login-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.agent-login-logo img {
+  height: 4rem;
+  width: auto;
+}
+
+.agent-login-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.agent-login-title h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.agent-login-title p {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-top: 0.5rem;
+}
+
+.agent-login-form-wrapper {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.agent-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.agent-login-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-login-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.agent-login-input {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  width: 100%;
+  transition: border-color 0.15s ease-in-out;
+}
+
+.agent-login-input:focus {
+  border-color: #2563eb;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.agent-login-error {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.agent-login-forgot-password {
+  text-align: right;
+}
+
+.agent-login-forgot-password a {
+  font-size: 0.875rem;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.agent-login-forgot-password a:hover {
+  text-decoration: underline;
+}
+
+.agent-login-submit {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.agent-login-submit:hover {
+  background-color: #1d4ed8;
+}
+
+.agent-login-submit:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.agent-login-footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.agent-login-footer a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.agent-login-footer a:hover {
+  text-decoration: underline;
+}
