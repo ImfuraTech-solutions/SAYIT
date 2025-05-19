@@ -55,19 +55,22 @@ const Footer: React.FC = () => {
             <h3 className="footer-section-title">Submit Complaint</h3>
             <ul className="footer-links">
               <li>
-                <Link to="/submit/standard" className="footer-link">
-                  Standard Submission
-                </Link>
-              </li>
-              <li>
-                <Link to="/submit/anonymous" className="footer-link">
-                  Anonymous Submission
-                </Link>
-              </li>
-              <li>
                 <Link to="/register" className="footer-link">
-                  Create Account
+                  As Standard User
                 </Link>
+                <span className="footer-link-hint">Create an account for full tracking</span>
+              </li>
+              <li>
+                <Link to="/login" className="footer-link">
+                  As Anonymous User
+                </Link>
+                <span className="footer-link-hint">Get an access code for private tracking</span>
+              </li>
+              <li>
+                <Link to="/external-complaint" className="footer-link">
+                  As Public User
+                </Link>
+                <span className="footer-link-hint">Submit without account or code</span>
               </li>
             </ul>
           </div>
@@ -133,9 +136,10 @@ const Footer: React.FC = () => {
               </a>
             </div>
           </div>
-          
-          <div className="footer-legal">
+            <div className="footer-legal">
             <Link to="/faq" className="footer-legal-link">FAQ</Link>
+            <Link to="/terms" className="footer-legal-link">Terms of Service</Link>
+            <Link to="/privacy" className="footer-legal-link">Privacy Policy</Link>
           </div>
         </div>
       </div>

@@ -1,11 +1,8 @@
-import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import React, { Suspense, lazy, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-// Layout Components
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import './app.css';
 
 // Main Pages
 import Home from './pages/Home';
@@ -15,6 +12,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 import FAQ from './pages/FAQ';
+import Terms from './pages/Terms';
+import Privacy from './pages/Privacy';
 import TrackComplaint from './pages/TrackComplaint';
 import ExternalComplaint from './pages/ExternalComplaint';
 
@@ -45,125 +44,46 @@ const LoadingFallback = () => (
   </div>
 );
 
-// Layout component with Navbar and Footer
-const Layout = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex flex-col min-h-screen">
-    <Navbar />
-    <main className="flex-grow">
-      {children}
-    </main>
-    <Footer />
-  </div>
-);
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
-// Dashboard layout (without navbar/footer)
-const DashboardLayout = ({ children }: { children: React.ReactNode }) => (
-  <>{children}</>
-);
+// ScrollToTop component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 
 const App: React.FC = () => {
   return (
     <Router>
       <ToastContainer position="top-right" autoClose={5000} />
+      <ScrollToTop />
+      <Navbar />
       <Routes>
-        {/* Public Routes with Layout */}
-        <Route 
-          path="/" 
-          element={
-            <Layout>
-              <Home />
-            </Layout>
-          } 
-        />
-        <Route 
-          path="/about" 
-          element={
-            <Layout>
-              <About />
-            </Layout>
-          } 
-        />
-        <Route 
-          path="/login" 
-          element={
-            <Layout>
-              <Login />
-            </Layout>
-          } 
-        />
-        <Route 
-          path="/register" 
-          element={
-            <Layout>
-              <Register />
-            </Layout>
-          } 
-        />        <Route 
-          path="/faq" 
-          element={
-            <Layout>
-              <FAQ />
-            </Layout>
-          } 
-        />
-        <Route 
-          path="/contact" 
-          element={
-            <Layout>
-              <Contact />
-            </Layout>
-          } 
-        />
-        <Route 
-          path="/staff-login" 
-          element={
-            <Layout>
-              <StaffLogin />
-            </Layout>
-          } 
-        />
-        <Route 
-          path="/agent-login" 
-          element={
-            <Layout>
-              <AgentLogin />
-            </Layout>
-          } 
-        />        <Route 
-          path="/forgot-password" 
-          element={
-            <Layout>
-              <ResetPassword />
-            </Layout>
-          } 
-        />        <Route 
-          path="/track-complaint" 
-          element={
-            <Layout>
-              <TrackComplaint />
-            </Layout>
-          } 
-        />
-        <Route 
-          path="/submit-complaint" 
-          element={
-            <Layout>
-              <ExternalComplaint />
-            </Layout>
-          } 
-        />
-
-        {/* Protected Dashboard Routes - No Layout (they have their own) */}
+        <Route path="/" element={<Home />} />        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/staff-login" element={<StaffLogin />} />
+        <Route path="/agent-login" element={<AgentLogin />} />
+        <Route path="/forgot-password" element={<ResetPassword />} />
+        <Route path="/track-complaint" element={<TrackComplaint />} />
+        <Route path="/submit-complaint" element={<ExternalComplaint />} />
+        {/* Protected Dashboard Routes */}
         <Route 
           path="/standard/*" 
           element={
             <ProtectedRoute 
               element={
-                <DashboardLayout>
-                  <Suspense fallback={<LoadingFallback />}>
-                    <StandardUserDashboard />
-                  </Suspense>
-                </DashboardLayout>
+                <Suspense fallback={<LoadingFallback />}>
+                  <StandardUserDashboard />
+                </Suspense>
               } 
             />
           } 
@@ -173,11 +93,9 @@ const App: React.FC = () => {
           element={
             <ProtectedRoute 
               element={
-                <DashboardLayout>
-                  <Suspense fallback={<LoadingFallback />}>
-                    <AnonymousDashboard />
-                  </Suspense>
-                </DashboardLayout>
+                <Suspense fallback={<LoadingFallback />}>
+                  <AnonymousDashboard />
+                </Suspense>
               } 
             />
           } 
@@ -187,11 +105,9 @@ const App: React.FC = () => {
           element={
             <ProtectedRoute 
               element={
-                <DashboardLayout>
-                  <Suspense fallback={<LoadingFallback />}>
-                    <AgentDashboard />
-                  </Suspense>
-                </DashboardLayout>
+                <Suspense fallback={<LoadingFallback />}>
+                  <AgentDashboard />
+                </Suspense>
               } 
             />
           } 
@@ -201,26 +117,17 @@ const App: React.FC = () => {
           element={
             <ProtectedRoute 
               element={
-                <DashboardLayout>
-                  <Suspense fallback={<LoadingFallback />}>
-                    <AdminDashboard />
-                  </Suspense>
-                </DashboardLayout>
+                <Suspense fallback={<LoadingFallback />}>
+                  <AdminDashboard />
+                </Suspense>
               } 
             />
           } 
         />
-
         {/* 404 Route */}
-        <Route 
-          path="*" 
-          element={
-            <Layout>
-              <NotFound />
-            </Layout>
-          } 
-        />
+        <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };

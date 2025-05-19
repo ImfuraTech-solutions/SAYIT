@@ -1,19 +1,28 @@
 /* Agent Login Page Styles */
 
+/* Root container */
 .agent-login-container {
   min-height: 100vh;
-  background-color: #f3f4f6;
-  padding: 3rem 1rem;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(120deg, #f5f8ff 0%, #eaf0fa 100%);
+  align-items: center;
   justify-content: center;
+  padding: 32px 8px;
 }
 
+/* Form card */
 .agent-login-form-container {
-  max-width: 28rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(30, 60, 120, 0.10), 0 1.5px 6px rgba(30, 60, 120, 0.06);
+  padding: 40px 32px 28px 32px;
+  max-width: 400px;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .agent-login-logo {
@@ -33,87 +42,102 @@
 }
 
 .agent-login-title h1 {
-  font-size: 1.875rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: #1f2937;
+  color: #1a237e;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
 }
 
 .agent-login-title p {
+  color: #5c6bc0;
   font-size: 1rem;
-  color: #6b7280;
-  margin-top: 0.5rem;
+  margin-bottom: 18px;
 }
 
 .agent-login-form-wrapper {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 .agent-login-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 18px;
 }
 
 .agent-login-form-group {
   display: flex;
   flex-direction: column;
+  gap: 6px;
 }
 
 .agent-login-label {
-  font-size: 0.875rem;
+  font-size: 1rem;
+  color: #283593;
   font-weight: 500;
-  color: #374151;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2px;
 }
 
 .agent-login-input {
-  padding: 0.75rem;
-  border: 1px solid #d1d5db;
-  border-radius: 0.375rem;
+  padding: 10px 12px;
+  border: 1.5px solid #c5cae9;
+  border-radius: 8px;
   font-size: 1rem;
-  width: 100%;
-  transition: border-color 0.15s ease-in-out;
+  background: #f8fafc;
+  transition: border-color 0.2s;
+  outline: none;
 }
 
 .agent-login-input:focus {
-  border-color: #2563eb;
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  border-color: #1976d2;
+  background: #fff;
+}
+
+.agent-login-input-error {
+  border-color: #e53935 !important;
+  background: #fff5f5;
 }
 
 .agent-login-error {
-  color: #dc2626;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
+  color: #e53935;
+  font-size: 0.92rem;
+  margin-top: 2px;
+  margin-left: 2px;
 }
 
-.agent-login-forgot-password {
-  text-align: right;
+.agent-login-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.agent-login-forgot-password a {
-  font-size: 0.875rem;
-  color: #2563eb;
+.agent-login-forgot-link {
+  font-size: 0.97rem;
+  color: #1976d2;
   text-decoration: none;
+  transition: color 0.2s;
 }
 
-.agent-login-forgot-password a:hover {
+.agent-login-forgot-link:hover {
+  color: #0d47a1;
   text-decoration: underline;
 }
 
 .agent-login-submit {
-  background-color: #2563eb;
-  color: white;
-  font-weight: 500;
-  padding: 0.75rem 1rem;
-  border-radius: 0.375rem;
+  margin-top: 8px;
+  padding: 12px 0;
+  background: linear-gradient(90deg, #1976d2 60%, #42a5f5 100%);
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 600;
   border: none;
-  font-size: 1rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.15s ease-in-out;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .agent-login-submit:hover {
@@ -121,22 +145,79 @@
 }
 
 .agent-login-submit:disabled {
-  background-color: #93c5fd;
+  background: #b0bec5;
   cursor: not-allowed;
+  box-shadow: none;
+}
+
+.agent-login-spinner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.agent-login-spinner-svg {
+  width: 22px;
+  height: 22px;
+  animation: agent-login-spin 1s linear infinite;
+}
+
+@keyframes agent-login-spin {
+  100% { transform: rotate(360deg); }
+}
+
+.agent-login-spinner-circle {
+  opacity: 0.2;
+}
+
+.agent-login-spinner-path {
+  opacity: 0.8;
 }
 
 .agent-login-footer {
-  margin-top: 2rem;
+  margin-top: 18px;
   text-align: center;
-  font-size: 0.875rem;
-  color: #6b7280;
 }
 
-.agent-login-footer a {
-  color: #2563eb;
+.agent-login-back-link {
+  color: #1976d2;
   text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
 }
 
-.agent-login-footer a:hover {
+.agent-login-back-link:hover {
+  color: #0d47a1;
   text-decoration: underline;
+}
+
+.agent-login-info {
+  max-width: 400px;
+  width: 100%;
+  background: #e3eafc;
+  border-radius: 12px;
+  padding: 18px 20px;
+  color: #283593;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 auto;
+  box-shadow: 0 1px 6px rgba(30, 60, 120, 0.06);
+}
+
+.agent-login-info-secondary {
+  color: #5c6bc0;
+  font-size: 0.97rem;
+  margin-top: 6px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .agent-login-form-container,
+  .agent-login-info {
+    padding: 18px 8px;
+    max-width: 98vw;
+  }
+  .agent-login-title h1 {
+    font-size: 1.4rem;
+  }
 }

@@ -92,12 +92,14 @@
 .hero-section {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
   color: white;
-  padding: 9rem 1.5rem 8rem;
+  padding: 3.5rem 1.5rem 7rem; /* Further reduced top padding */
   position: relative;
   overflow: hidden;
-  min-height: 90vh;
+  min-height: 70vh; /* Further reduced min-height */
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: -4rem; /* More negative margin to raise up */
+  z-index: 10;
 }
 
 .hero-container {
@@ -127,7 +129,26 @@
   font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 2.5rem;
-  opacity: 0.9;
+  opacity: 0.98;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  text-align: left;
+  background: linear-gradient(90deg, rgba(26,86,219,0.16) 0%, rgba(49,130,206,0.14) 100%); /* More visible blue */
+  color: #1a3b5d;
+  padding: 1.5rem 2rem; /* Increased padding */
+  border-radius: 16px; /* More rounded */
+  box-shadow: 0 4px 18px rgba(37,99,235,0.10);
+  border: 2px solid #dbeafe; /* Slightly more visible border */
+}
+
+@media (max-width: 600px) {
+  .hero-description {
+    font-size: 1.08rem;
+    padding: 1rem 0.7rem;
+    border-radius: 12px;
+  }
 }
 
 .hero-buttons {
@@ -653,5 +674,11 @@
 
   .hero-title {
     font-size: 5rem;
+  }
+
+  .hero-section {
+    padding: 4rem 2rem 8rem; /* Even less top padding on large screens */
+    min-height: 65vh;
+    margin-top: -5rem;
   }
 }
