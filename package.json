@@ -1,5 +1,5 @@
 {
-  "name": "SAYIT",
+  "name": "sayit",
   "version": "1.0.0",
   "scripts": {
     "install:Backend": "cd Backend && npm install",
